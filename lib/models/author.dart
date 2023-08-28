@@ -11,28 +11,24 @@ class Author {
 
   Author copyWith({
     String? name,
-    int? id,
+    String? key,
   }) {
-    return Author(
-      name: name ?? this.name,
-      key: key ?? this.key,
-    );
+    return Author(name: name ?? this.name, key: key ?? this.key);
   }
 
   Map<String, dynamic> toMap() {
     final result = <String, dynamic>{};
 
-    result.addAll({'name': name});
-    result.addAll({'key': key});
+    result.addAll({'author_name': name});
+    result.addAll({'author_key': key});
 
     return result;
   }
 
   factory Author.fromMap(Map<String, dynamic> map) {
     return Author(
-      name: map['docs']['author_name'] ?? '',
-      key: map['docs']['author_key']?? ''
-    );
+        name: map['docs']['author_name'] ?? '',
+        key: map['docs']['author_key'] ?? '');
   }
 
   String toJson() => json.encode(toMap());
@@ -41,7 +37,7 @@ class Author {
 
   @override
   String toString() {
-    return 'Author( name: $name, key: $key)';
+    return 'Author( author_name: $name, author_key: $key)';
   }
 
   @override

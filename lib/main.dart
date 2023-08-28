@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
-import '../repository/search_repository.dart';
-import 'package:http/http.dart';
-
-import 'home/home.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'home/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,14 +12,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Book Author Search App,',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const HomePage(title: 'Book Author Search App,'),
+      home: const HomePage(),
     );
   }
 }
